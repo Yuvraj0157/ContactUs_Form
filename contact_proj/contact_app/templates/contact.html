@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        /* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #F9F9F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .signupForm {
+    background-color: #FFFFFF;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #mainHeading {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  #subHeading {
+    font-size: 25px;
+    color: #040624;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .signupForm input,
+  .signupForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #F0ECEB;
+    transition: border-color 0.3s;
+    resize: vertical;
+    overflow-y: auto;
+  }
+  
+  .signupForm input:focus,
+  .signupForm textarea:focus {
+    border-color: black;
+  }
+  
+  .modButton {
+    background-color: #2a45a8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .modButton:hover {
+    background-color: #07258f;
+  }
+  
+    </style>
+</head>
+<body>
+    <div style="padding-left: 40px;" class="col-lg-5 col-md-5 col-sm-12 ">
+        <h2 id="mainHeading">Have a Query?</h2>
+         <h3 id="subHeading">Ask Us Today</h3><br>
+         <form method="POST" action="/contact_us/"  class="signupForm">
+          {% csrf_token %}
+            <input type="text" name="name" placeholder="Full Name" required="">
+            <input type="email" name="email" placeholder="Email ID" required="">
+            <input type="number" name="phone" placeholder="Phone Number" required="">
+            <textarea id="queryBox" placeholder="Your Query" name="query" rows="4" cols="50" required=""></textarea><br>
+            <button type="submit" class="modButton">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
